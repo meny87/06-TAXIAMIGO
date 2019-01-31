@@ -1,0 +1,200 @@
+<div class="row">
+    <div class="col-8">
+        <div class="card border-info mb-3">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-auto mr-auto text-center">
+                        <strong>LISTA DE UNIDADES</strong>
+                    </div>
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fas fa-search"></i></div>
+                            </div>
+                            <input type="search" class="light-table-filter form-control" data-table="order-table"
+                                placeholder="Filtrar...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <table class="table table-hover table-sm order-table" id="myTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">Número</th>
+                            <th scope="col">Placa</th>
+                            <th scope="col">Marca(Año)</th>
+                            <th scope="col">Aseguradora</th>
+                            <th scope="col">Póliza</th>
+                            <th scope="col">Teléfono Aseguradora</th>
+                            <th scope="col">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each unidad}}
+                        <tr>
+                            <th scope="row">{{this.numero}}</th>
+                            <td><small>{{this.placas}}</small></td>
+                            <td><small>{{this.marca}} ({{this.modelo}})</small></td>
+                            <td><small>{{this.aseguradora}}</small></td>
+                            <td><small>{{this.polizaSeguro}}</small></td>
+                            <td><small>{{this.contactoAseguradora}}</small></td>
+                            <td>
+                                <a href="/units/details?id={{this._id}}"><i class="fas fa-info-circle"></i></a>&nbsp;
+                                <a href="/units/edit?id={{this._id}}"><i class="far fa-edit"></i></a>&nbsp;
+                                <a href="/units/delete?id={{this._id}}"><i class="far fa-times-circle"></i></a>
+                            </td>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card border-info mb-3">
+            <div class="card-header">
+                <strong>
+                    AGREGAR NUEVA UNIDAD</div>
+            </strong>
+            <div class="card-body">
+                <form method="POST" action="/units">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" id="inputEmail4" name="numero" text="{{unit.Numero}}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" id="inputPassword4" name="modelo" placeholder="Año">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="marca" class="form-control" id="inputEmail4" placeholder="Marca">
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="doors">
+                                <i class="fas fa-car-side"></i> Puertas
+                            </label>
+                            <input type="text" name="puertas" class="form-control" id="inputAddress">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ac">
+                                <i class="fas fa-wind"></i> Aire Acondicionado
+                            </label>
+                            <select class="form-control" id="ac" name="ac">
+                                <option>Si</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="BT">
+                                <i class="fab fa-bluetooth"></i>BlueTooth
+                            </label>
+                            <select class="form-control" id="BT" name="bt">
+                                <option>Si</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ESP">
+                                <i class="fas fa-wheelchair"></i> Especial
+                            </label>
+                            <select class="form-control" id="ESP" name="especial">
+                                <option>Si</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fab fa-slack"></i>
+                            </div>
+                        </div>
+                        <input type="text" name="placas" class="form-control" id="inlineFormInputGroup" placeholder="Número de placas">
+                    </div>
+
+
+                    <hr>
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                        </div>
+                        <input type="text" name="aseguradora" class="form-control" id="inlineFormInputGroup"
+                            placeholder="Aseguradora">
+                    </div>
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                        </div>
+                        <input type="text" name="polizaSeguro" class="form-control" id="inlineFormInputGroup"
+                            placeholder="Número de Póliza">
+                    </div>
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-phone-square"></i>
+                            </div>
+                        </div>
+                        <input type="text" name="contactoAseguradora" class="form-control" id="inlineFormInputGroup"
+                            placeholder="Teléfono Aseguradora">
+                    </div>
+
+                    <hr>
+                    <button type="submit" class="btn btn-primary">Guardar Datos</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function (document) {
+        'use strict';
+        var LightTableFilter = (function (Arr) {
+            var _input;
+            function _onInputEvent(e) {
+                _input = e.target;
+                var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+                Arr.forEach.call(tables, function (table) {
+                    Arr.forEach.call(table.tBodies, function (tbody) {
+                        Arr.forEach.call(tbody.rows, _filter);
+                    });
+                });
+            }
+            function _filter(row) {
+                var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+                row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+            }
+            return {
+                init: function () {
+                    var inputs = document.getElementsByClassName('light-table-filter');
+                    Arr.forEach.call(inputs, function (input) {
+                        input.oninput = _onInputEvent;
+                    });
+                }
+            };
+        })(Array.prototype);
+        document.addEventListener('readystatechange', function () {
+            if (document.readyState === 'complete') {
+                LightTableFilter.init();
+            }
+        });
+    })(document);
+</script>

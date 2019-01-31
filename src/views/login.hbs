@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+  <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link href="https://getbootstrap.com/docs/4.1/examples/sign-in/signin.css" rel="stylesheet">
+  <link rel="icon" href="http://taxiamigo.com.mx/wp/wp-content/uploads/2016/12/Favicon-16x16.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
+
+  <style>
+    .body-content{
+      margin: 5px;
+    }
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="text-center">
+  <form class="form-signin" action="/login" method="post">
+    {{#if message}}
+    <div class="alert alert-danger">
+      {{message}}
+    </div>
+    {{/if}}
+
+
+    <img class="mb-4" src="https://png.pngtree.com/element_origin_min_pic/16/10/27/1f01715a25ddc1f52646df2e2c6637a9.jpg"
+      alt="" width="215" height="172">
+    <h1 class="h3 mb-3 font-weight-normal">Acceso al Sistema</h1>
+    <label for="inputEmail" class="sr-only">Usuario</label>
+    <input type="text" id="inputEmail" name="email" class="form-control" placeholder="Usuario" required autofocus>
+    <label for="inputPassword" class="sr-only">Contraseña</label>
+    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" required>
+</small>
+
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+
+    <hr>
+    <div class="text-center">
+      <p>¿Requieres crear una cuenta? <a href="/signup">Regístrate</a></p>
+      <p>o ir a <a href="/">Página principal</a>.</p>
+    </div>
+
+    <p class="mt-5 text-muted">&copy; Taxi Amigo Durango</p>
+    <small class="text-muted">Creado por Emmanuel Casas Bayona.</small>
+
+  </form>
+
+
+
+</body>
+
+</html>

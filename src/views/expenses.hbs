@@ -1,0 +1,185 @@
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Registrar Nuevo Gasto</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    <form>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Fecha</label>
+                            <div class="col-sm-8">
+                                <input type="date" class="form-control-plaintext" id="staticEmail">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-4 col-form-label">Cantidad</label>
+                            <div class="col-auto">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fas fa-dollar-sign"></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroup">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="exampleFormControlTextarea1" class="col-sm-4 col-form-label">Concepto</label>
+                            <div class="col-sm-8">
+                                <div class="form-group">
+
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-4 col-form-label">Responsable</label>
+                            <div class="col-auto">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fas fa-user-circle"></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroup" >
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </p>
+                <a href="#" class="btn btn-primary">Registrar Gasto</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="ccard bg-light mb-3">
+            <div class="card-body">
+                <h2 class="card-title">Total en Caja</h2>
+                <p class="card-text">
+                    <h1>
+                        $12,453.70
+                    </h1>
+                    Cantidad exacta al día de hoy.
+                    <hr>
+                    <small><i>NOTA: Si la cantidad no coincide, favor de registrar los gastos pendientes</i></small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="container">
+        <div class="card border-secondary mb-3">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-auto mr-auto text-center">
+                        <strong>LISTA DE GASTOS SEMANAL</strong>
+                    </div>
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fas fa-search"></i></div>
+                            </div>
+                            <input type="search" class="light-table-filter form-control" data-table="order-table"
+                                placeholder="Filtrar...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover table-sm order-table" id="myTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">Unidad</th>
+                            <th scope="col">Nombre Completo</i></th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col"> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">01</th>
+                            <td><small>Luna López Luis Humberto</small></td>
+                            <td><small>618-123-4235</small></td>
+                            <td><i class="far fa-edit"></i>&nbsp;<i class="far fa-times-circle"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">04</th>
+                            <td><small>Rodríguez López Luis Humberto</small></td>
+                            <td><small>618-123-4235</small></td>
+                            <td><i class="far fa-edit"></i>&nbsp;<i class="far fa-times-circle"></i></td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">19</th>
+                            <td><small>Pérez López Luis Humberto</small></td>
+                            <td><small>618-123-4235</small></td>
+                            <td><i class="far fa-edit"></i>&nbsp;<i class="far fa-times-circle"></i></td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">39</th>
+                            <td><small>Galindo López Luis Humberto</small></td>
+                            <td><small>618-123-4235</small></td>
+                            <td><i class="far fa-edit"></i>&nbsp;<i class="far fa-times-circle"></i></td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">48</th>
+                            <td><small>Hernández López Luis Humberto</small></td>
+                            <td><small>618-123-4235</small></td>
+                            <td><i class="far fa-edit"></i>&nbsp;<i class="far fa-times-circle"></i></td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<script>
+    (function (document) {
+        'use strict';
+        var LightTableFilter = (function (Arr) {
+            var _input;
+            function _onInputEvent(e) {
+                _input = e.target;
+                var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+                Arr.forEach.call(tables, function (table) {
+                    Arr.forEach.call(table.tBodies, function (tbody) {
+                        Arr.forEach.call(tbody.rows, _filter);
+                    });
+                });
+            }
+            function _filter(row) {
+                var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+                row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+            }
+            return {
+                init: function () {
+                    var inputs = document.getElementsByClassName('light-table-filter');
+                    Arr.forEach.call(inputs, function (input) {
+                        input.oninput = _onInputEvent;
+                    });
+                }
+            };
+        })(Array.prototype);
+        document.addEventListener('readystatechange', function () {
+            if (document.readyState === 'complete') {
+                LightTableFilter.init();
+            }
+        });
+    })(document);
+</script>

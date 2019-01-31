@@ -1,0 +1,41 @@
+<div class="container">
+   {{#if message}}
+        <div class="alert alert-danger">
+          {{message}}
+        </div>
+        {{/if}}
+</div>
+<div class="container">
+  <div class="col-sm-6 mx-auto">
+    <div class="card mt-5">
+      <div class="card-body">
+        <!-- messages -->
+        <h2 class="text-center">
+          <span class="fa fa-sign-in"></span> Registro de Usuarios
+        </h2>
+       
+
+        <!-- form -->
+        <form action="/signup" method="post">
+          <div class="form-group">
+            <label for="email">Nombre de Usuario</label>
+            <input type="text" name="email" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control">
+                <small id="passwordHelpBlock" class="form-text text-muted mb-2">
+      La constraseña debe contener de al menos 8 caracteres.
+          </div>
+          <input type="submit" class="btn btn-dark btn-lg">
+        </form>
+
+        <hr>
+        <div class="text-center">
+          <p>¿Ya tienes cuenta? <a href="/login">Accede</a></p>
+          <p>o ir a <a href="/">Página principal</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,139 @@
+<div class="container-fluid">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-6">
+            <div class="card border-info mb-3">
+                <div class="card-header">
+                    <strong>
+                        EDITAR DATOS DE LA UNIDAD {{unidad.numero}}</div>
+                </strong>
+                <div class="card-body">
+                    <form method="POST" action="/units/edit">
+
+                    <input type="hidden" name="id" value="{{unidad._id}}">
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Número</label>
+                                <input type="text" class="form-control" name="numero" value="{{unidad.numero}}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Modelo</label>
+                                <input type="text" class="form-control" name="modelo" value="{{unidad.modelo}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Marca</label>
+                            <input type="text" name="marca" class="form-control" value="{{unidad.marca}}">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="doors">
+                                    <i class="fas fa-car-side"></i> Puertas
+                                </label>
+                                <input type="text" name="puertas" class="form-control" id="inputAddress" value="{{unidad.puertas}}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ac">
+                                    <i class="fas fa-wind"></i> Aire Acondicionado
+                                </label>
+                                <select class="form-control" id="ac" name="ac" value="{{unidad.ac}}">
+                                    <option value="{{unidad.ac}}">{{unidad.ac}}</option>
+                                    {{#if condiciones.isAc}}
+                                    <option>No</option>
+                                    {{else}}
+                                    <option>Si</option>
+                                    {{/if}}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="BT">
+                                    <i class="fab fa-bluetooth"></i>BlueTooth
+                                </label>
+                                <select class="form-control" id="BT" name="bt">
+                                    <option value="{{unidad.bt}}">{{unidad.bt}}</option>
+                                    {{#if condiciones.isBt}}
+                                    <option>No</option>
+                                    {{else}}
+                                    <option>Si</option>
+                                    {{/if}}
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ESP">
+                                    <i class="fas fa-wheelchair"></i> Especial
+                                </label>
+                                <select class="form-control" id="ESP" name="especial" value="{{unidad.epecial}}">
+                                    <option value="{{unidad.especial}}">{{unidad.especial}}</option>
+                                    {{#if condiciones.isEspecial}}
+                                    <option>No</option>
+                                    {{else}}
+                                    <option>Si</option>
+                                    {{/if}}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    Placas
+                                </div>
+                            </div>
+                            <input type="text" name="placas" class="form-control" id="inlineFormInputGroup" value="{{unidad.placas}}">
+                        </div>
+
+
+                        <hr>
+
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    Aseguradora
+                                </div>
+                            </div>
+                            <input type="text" name="aseguradora" class="form-control" id="inlineFormInputGroup" value="{{unidad.aseguradora}}">
+                        </div>
+
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    Póliza
+                                </div>
+                            </div>
+                            <input type="text" name="polizaSeguro" class="form-control" id="inlineFormInputGroup" value="{{unidad.polizaSeguro}}">
+                        </div>
+
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    Teléfono Aseguradora
+                                </div>
+                            </div>
+                            <input type="text" name="contactoAseguradora" class="form-control" id="inlineFormInputGroup"
+                                value="{{unidad.contactoAseguradora}}">
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <button class="btn btn-outline-success btn-lg btn-block" type="submit"> Guardar Cambios</button>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <a class="btn btn-outline-secondary btn-lg btn-block" href="/units">Cancelar</a>
+                            </div>
+
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

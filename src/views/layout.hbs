@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+  <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="icon" href="http://taxiamigo.com.mx/wp/wp-content/uploads/2016/12/Favicon-16x16.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
+
+  <style>
+    .body-content {
+      margin: 5px;
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="text-center">
+  <nav class="site-header sticky-top py-1">
+    <div class="container d-flex flex-column flex-lg-row justify-content-between">
+      <a class="py-4 d-none d-lg-inline-block" href="/control"><i class="fas fa-chart-bar"></i> Panel de control</a>
+      <a class="py-4 d-none d-lg-inline-block" href="/units"><i class="fas fa-taxi"></i> Unidades</a>
+      <a class="py-4 d-none d-lg-inline-block" href="/drivers"><i class="fas fa-users"></i> Conductores</a>
+      <a class="py-4 d-none d-lg-inline-block" href="/owners"><i class="fas fa-user-tie"></i> Propietarios</a>
+      <a class="py-4 d-none d-lg-inline-block" href="/expenses"><i class="fas fa-file-invoice-dollar"></i> Gastos</a>
+    </div>
+  </nav>
+  <div class="ml-2 mr-2 mt-2">
+    <div class="alert alert-success" role="alert">
+      <div class="row">
+        <div class="col-10">
+          <h3>{{title}}</h3>
+        </div>
+        <div class="col-2">
+          {{#if needLogged}}
+          <a href="/login" class="btn  btn-sm  btn-outline-dark" role="button"> <i class="fas fa-sign-in-alt"></i>
+            Acceder</a>
+          {{else}}
+          <i class="fas fa-user-circle"></i> <strong>{{userName}}</strong>
+          <a href="/logout" class="btn  btn-sm  btn-outline-dark" role="button"> <i class="fas fa-sign-out-alt"></i>
+            Salir</a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    {{{body}}}
+  </div>
+  <hr>
+  <footer class="text-muted text-center text-small">
+    <p class="mb-1">&copy; 2019 Taxi Amigo Durango</p>
+    <small>Creado por Emmanuel Casas Bayona.</small>
+  </footer>
+</body>
+
+</html>

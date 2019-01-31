@@ -1,0 +1,191 @@
+<div class="row">
+    <div class="col-8">
+        <div class="card border-info mb-3">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-auto mr-auto text-center">
+                        <strong>LISTA DE CONDUCTORES</strong>
+                    </div>
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fas fa-search"></i></div>
+                            </div>
+                            <input type="search" class="light-table-filter form-control" data-table="order-table"
+                                placeholder="Filtrar...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover table-sm order-table" id="myTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre Completo</th>
+                            <th scope="col">Dirección</th>
+                            <th scope="col">Teléfono en la Unidad</th>
+                            <th scope="col">Teléfono Personal</th>
+                            <th scope="col">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Luna López Luis Humberto</th>
+                            <td><small>Calle Luna #425 Fraccionameinto Los Remedios 2</small></td>
+                            <td><small>618-123-4235</small></td>
+                            <td><small>826-3456</small></td>
+                            <td><i class="fas fa-ambulance"></i>&nbsp;<i class="far fa-edit"></i>&nbsp;<i class="far fa-times-circle"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Rodríguez López Luis Humberto</th>
+                            <td><small>Calle Luna #425 Fraccionameinto Los Remedios 2</small></td>
+                            <td><small>618-123-4235</small></td>
+                            <td><small>826-3456</small></td>
+                            <td><i class="fas fa-ambulance"></i>&nbsp;<i class="far fa-edit"></i>&nbsp;<i class="far fa-times-circle"></i></td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Pérez López Luis Humberto</th>
+                            <td><small>Calle Luna #425 Fraccionameinto Los Remedios 2</small></td>
+                            <td><small>618-123-4235</small></td>
+                            <td><small>826-3456</small></td>
+                            <td><i class="fas fa-ambulance"></i>&nbsp;<i class="far fa-edit"></i>&nbsp;<i class="far fa-times-circle"></i></td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Galindo López Luis Humberto</th>
+                            <td><small>Calle Luna #425 Fraccionameinto Los Remedios 2</small></td>
+                            <td><small>618-123-4235</small></td>
+                            <td><small>826-3456</small></td>
+                            <td><i class="fas fa-ambulance"></i>&nbsp;<i class="far fa-edit"></i>&nbsp;<i class="far fa-times-circle"></i></td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Hernández López Luis Humberto</th>
+                            <td><small>Calle Luna #425 Fraccionameinto Los Remedios 2</small></td>
+                            <td><small>618-123-4235</small></td>
+                            <td><small>826-3456</small></td>
+                            <td><i class="fas fa-ambulance"></i>&nbsp;<i class="far fa-edit"></i>&nbsp;<i class="far fa-times-circle"></i></td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card border-info mb-3">
+            <div class="card-header">
+                <strong>
+                    AGREGAR NUEVO CONDUCTOR</div>
+            </strong>
+            <div class="card-body">
+                <form>
+                    <div class="card mb-2">
+                        <div class="card-header">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Ap. Paterno">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="password" class="form-control" id="inputPassword4" placeholder="Ap. Materno">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="inputAddress" placeholder="Nombre(s)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-home"></i>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Dirección">
+                    </div>
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Teléfono Unidad">
+                    </div>
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-user-tie"></i>&nbsp;<i class="fas fa-phone-square"></i>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Teléfono Personal">
+                    </div>
+
+                    <hr>
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-address-card"></i>&nbsp;<i class="fas fa-ambulance"></i>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Contacto de Emergencia">
+                    </div>
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-phone"></i>&nbsp;<i class="fas fa-ambulance"></i>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Teléfono Emergencia">
+                    </div>
+
+                    <hr>
+                    <button type="submit" class="btn btn-primary">Guardar Datos</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function (document) {
+        'use strict';
+        var LightTableFilter = (function (Arr) {
+            var _input;
+            function _onInputEvent(e) {
+                _input = e.target;
+                var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+                Arr.forEach.call(tables, function (table) {
+                    Arr.forEach.call(table.tBodies, function (tbody) {
+                        Arr.forEach.call(tbody.rows, _filter);
+                    });
+                });
+            }
+            function _filter(row) {
+                var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+                row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+            }
+            return {
+                init: function () {
+                    var inputs = document.getElementsByClassName('light-table-filter');
+                    Arr.forEach.call(inputs, function (input) {
+                        input.oninput = _onInputEvent;
+                    });
+                }
+            };
+        })(Array.prototype);
+        document.addEventListener('readystatechange', function () {
+            if (document.readyState === 'complete') {
+                LightTableFilter.init();
+            }
+        });
+    })(document);
+</script>
