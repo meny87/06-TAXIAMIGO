@@ -1,3 +1,3 @@
 module.exports = {
-	'url': 'mongodb://localhost/TaxiAmigo-Inc'
+	'url': process.env.MONGODB_URI
 };
