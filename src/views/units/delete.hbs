@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="col">
+            <div class="card border-danger mb-3 ">
+                <div class="card-header">
+                    <h3 class="card-title"><span class="fa fa-taxi"></span> Unidad {{unidad.numero}}</h3>
+                </div>
+                <div class="card-body text-dark text-left">
+                    <p>
+                        <strong>Placa</strong> : {{unidad.placas}}<br>
+                        <hr>
+                        <strong>Marca</strong> : {{unidad.marca}}<br>
+                        <strong>Modelo</strong> : {{unidad.modelo}}<br>
+                        <strong>Puertas</strong> : {{unidad.puertas}}<br>
+                        <strong>A/C</strong> : {{unidad.ac}}<br>
+                        <strong>BT</strong> : {{unidad.bt}}<br>
+                        <strong>Especial</strong> : {{unidad.especial}}<br>
+                        <hr>
+                        <strong>Aseguradora</strong> : {{unidad.aseguradora}}<br>
+                        <strong>Póliza</strong> : {{unidad.polizaSeguro}}<br>
+                        <strong>Teléfono</strong> : {{unidad.contactoAseguradora}}<br>
+                    </p>
+                    <hr>
+                    <form method="POST" action="/units/delete">
+                        <input type="hidden" name="id" value="{{unidad.id}}"> </input>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <button class="btn btn-outline-danger btn-md btn-block" type="submit"> Eliminar</button>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <a class="btn btn-outline-secondary btn-md btn-block" href="/units">Cancelar</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>

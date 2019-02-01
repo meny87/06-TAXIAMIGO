@@ -102,6 +102,7 @@ module.exports = (app, passport) => {
 			modelo: req.body.modelo,
 			placas: req.body.placas,
 			aseguradora: req.body.aseguradora,
+			polizaSeguro: req.body.polizaSeguro,
 			contactoAseguradora: req.body.contactoAseguradora,
 			puertas: req.body.puertas,
 			ac: req.body.ac,
@@ -112,8 +113,8 @@ module.exports = (app, passport) => {
 		console.log("POST UNIDAD", unidad);
 		console.log("REQ.BODY", req.body);
 
-		Unit.findOneAndUpdate({ _id: req.body.id}, {$set: unidad}, {new: true}, (err, doc) =>{
-			if(err){
+		Unit.findOneAndUpdate({ _id: req.body.id }, { $set: unidad }, { new: true }, (err, doc) => {
+			if (err) {
 				console.log('ERROR', e);
 				return next();
 			}
@@ -143,13 +144,32 @@ module.exports = (app, passport) => {
 
 	});
 
-
 	app.get('/units/delete', isLoggedIn, (req, res) => {
+		Unit.findById(req.query.id, (err, unit) => {
+			if (err) {
+				return next();
+			}
 
-		res.render('units/delete', {
-			title: "Unidades - Eliminar",
-			user: req.user,
-			userName: req.user.local.email
+			console.log("DELETE UNIDAD", unit);
+
+			res.render('units/delete', {
+				title: "Unidades - Eliminar",
+				user: req.user,
+				userName: req.user.local.email,
+				unidad: unit
+			});
+		});
+	});
+
+	app.post('/units/delete', (req, res, next) => {
+		Unit.findByIdAndRemove(req.body.id, (err, doc) => {
+			if (!err) {
+				console.log('DOCUMENT::', doc);
+				res.redirect('/units');
+			}
+			else {
+				console.log('ERROR ', err);
+			}
 		});
 
 	});
